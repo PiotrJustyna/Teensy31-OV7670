@@ -99,11 +99,11 @@ int writeRegisterArray(
   byte deviceAddress,
   const struct RevisterValue *registerValues) {        
     while (registerValues -> registerAddress != 0xff || registerValues -> registerData != 0xff) {
-      int ret = writeRegister(deviceAddress, registerValues -> registerAddress, registerValues -> registerData);
-      Serial.printf("ret: %i.\n", ret);
+      int transmissionResult = writeRegister(deviceAddress, registerValues -> registerAddress, registerValues -> registerData);
+      Serial.printf("Register write status: %i.\n", transmissionResult);
 
-      if (ret < 0) {
-        return ret;
+      if (transmissionResult < 0) {  // TODO: not sure if this can ever be < 0
+        return transmissionResult;
       }
       
       registerValues++;
