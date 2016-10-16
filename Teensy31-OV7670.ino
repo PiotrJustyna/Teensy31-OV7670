@@ -6,9 +6,21 @@
 
 #include <Wire.h>
 
-const byte SIO_C  = 19;
-const byte SIO_D  = 18;
 const byte XCLK   = 3;
+const byte VSYNC  = 4;
+const byte HREF   = 5;
+const byte PCLK   = 6;
+const byte D0     = 7;
+const byte D1     = 8;
+const byte D2     = 9;
+const byte D3     = 14; // TODO: consider usnig pins from 10 to 13
+const byte D4     = 15;
+const byte D5     = 16;
+const byte D6     = 17;
+const byte SIO_D  = 18;
+const byte SIO_C  = 19;
+const byte D7     = 20;
+const byte RESET  = 21;
 
 struct RevisterValue {
   byte registerAddress;
